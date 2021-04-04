@@ -12,6 +12,9 @@ import { CadastrarComponent } from './screens/cadastrar/cadastrar.component';
 import { UserPageComponent } from './screens/user-page/user-page.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TemaComponent } from './screens/tema/tema.component';
+import { TemaEditComponent } from './screens/edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './screens/delete/tema-delete/tema-delete.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
-    UserPageComponent
+    UserPageComponent,
+    TemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent
   ],
   imports: [
     BrowserModule,
