@@ -9,6 +9,9 @@ import { MenuComponent } from './template/menu/menu.component';
 import { RodapeComponent } from './template/rodape/rodape.component';
 import { EntrarComponent } from './screens/entrar/entrar.component';
 import { CadastrarComponent } from './screens/cadastrar/cadastrar.component';
+import { UserPageComponent } from './screens/user-page/user-page.component';
+
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -17,7 +20,8 @@ import { CadastrarComponent } from './screens/cadastrar/cadastrar.component';
     MenuComponent,
     RodapeComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,10 @@ import { CadastrarComponent } from './screens/cadastrar/cadastrar.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
