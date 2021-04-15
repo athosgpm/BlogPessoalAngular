@@ -3,6 +3,7 @@ import { Tema } from './../model/Tema';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema',
@@ -24,6 +25,13 @@ export class TemaComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    if(environment.tipo != 'adm'){
+      Swal.fire({
+        icon: 'error',
+        title: 'Ishe...',
+        text: 'Usuario ou senha errados.',
+      });
+    }
     this.findAllTemas()
   }
 
@@ -40,6 +48,7 @@ export class TemaComponent implements OnInit {
        this.findAllTemas()
        this.tema = new Tema()
      })
+     this.router.navigate(['/inicio'])
   }
 
 }
